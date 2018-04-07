@@ -1,0 +1,205 @@
+{% load staticfiles %}
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>肌情AI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="/home/emilien/myproject/js/tracking-min.js"></script>
+  <script src="/home/emilien/myproject/js/face-min.js"></script>
+  <script src="/home/emilien/myproject/js/build/dat.gui.min.js"></script>
+  <script src="/home/emilien/myproject/js/stats.min.js"></script>
+
+  <style>
+  video,
+  canvas {
+      left: 50%;
+      margin-left: -12.5%;
+      position: absolute;
+  }
+  
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">肌情AI</a></li>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">WHAT WE DO</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h3 class="margin">Skin Analysis</h3>
+  <div class="demo-frame">
+   <div class="demo-container">
+     <video id="video" width="320" height="240" preload autoplay loop muted></video>
+     <canvas id="canvas" width="320" height="240"></canvas>
+   </div>
+</div>
+</div>
+
+<!-- Pricing Row -->
+<div class="container-fluid bg-2 text-center">
+    <h2>熱門討論</h2>
+{% block content%}{% endblock %}
+    <p>根據您的膚質狀況找出最新的討論主題</p><br>
+    <div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">{{1}}</p>
+        </li>
+        <li class="w3-normal">{{c}}</li>
+        
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+          <a href={{a}} class="w3-button w3-teal w3-padding-large">前往文章<a>
+        </li>
+      </ul>
+    </div>
+
+<div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">{{b}}</p>
+        </li>
+        <li class="w3-padding-16">{{c}}</li>
+        
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+          <a href={{a}} class="w3-button w3-teal w3-padding-large">前往文章<a>
+        </li>
+      </ul>
+    </div>
+
+<div class="w3-third w3-margin-bottom">
+      <ul class="w3-ul w3-border w3-hover-shadow">
+        <li class="w3-theme">
+          <p class="w3-xlarge">{{b}}</p>
+        </li>
+        <li class="w3-padding-16">{{c}}</li>
+        
+        </li>
+        <li class="w3-theme-l5 w3-padding-24">
+          <a href={{a}} class="w3-button w3-teal w3-padding-large">前往文章<a>
+        </li>
+      </ul>
+    </div>
+
+
+</div>
+
+
+<!-- Second Container -->
+<div class="container-fluid bg-4 text-center">
+  <h3 class="margin">What Am I?</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </a>
+</div>
+
+<!-- four Container (Grid) -->
+
+
+<script>
+        window.onload = function() {
+            var video = document.getElementById('video');
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            var tracker = new tracking.ObjectTracker('face');
+            tracker.setInitialScale(4);
+            tracker.setStepSize(2);
+            tracker.setEdgesDensity(0.1);
+            tracking.track('#video', tracker, {
+                camera: true
+            });
+            tracker.on('track', function(event) {
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                event.data.forEach(function(rect) {
+                    context.strokeStyle = '#a64ceb';
+                    context.strokeRect(rect.x, rect.y, rect.width, rect.height);
+                    context.font = '11px Helvetica';
+                    context.fillStyle = "#fff";
+                    context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
+                    context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+                });
+            });
+            var gui = new dat.GUI();
+            gui.add(tracker, 'edgesDensity', 0.1, 0.5).step(0.01);
+            gui.add(tracker, 'initialScale', 1.0, 10.0).step(0.1);
+            gui.add(tracker, 'stepSize', 1, 5).step(0.1);
+        };
+    </script> 
+
+<!-- Footer -->
+<footer class="container-fluid bg-0 text-center">
+  <font color="black">Bootstrap Theme Made By <font color="black" href="https://www.w3schools.com">www.w3schools.com</font></font> 
+</footer>
+
+</body>
+</html>
+
+    
+

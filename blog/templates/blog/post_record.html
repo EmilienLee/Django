@@ -1,0 +1,13 @@
+
+{% block content%}
+x0=rethinkdb(name='dry')
+x=x0.name
+y0=rethinkdb(name='good')
+y=y0.name
+{% if x == 'dry' & y == 'good' %}
+    <a href="/blog/{{ rethinkdb.group1}}">第一類</a>
+    {% elif x == 'dry' & y == 'bad' %}
+    <a href="/blog/{{ rethinkdb.group2}}">第二類</a>
+    <a href="/blog/{{ rethinkdb.group2}}">x.name</a>
+{% endif %}
+{% endblock %}

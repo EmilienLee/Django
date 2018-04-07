@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% block content%}
+
+
+{% if x == 'dry' and y == 'good' %}
+    <a>r.db("babyhome").table("test2").filter({'group':0}).max('id').run(conn)</a>
+{% elif x == 'dry' and y == 'bad' %}
+    <a></a>
+{% else %}
+    No athletes.
+{% endif %}
+
+{% endblock %}

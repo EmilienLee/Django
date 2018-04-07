@@ -1,0 +1,16 @@
+{% load staticfiles %}
+<html>
+    <head>
+          <title>test</title>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+          <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css" > 
+          <link rel ="stylesheet" href="{% static 'css/blog.css' %}">
+          <!--link rel ="stylesheet" href="/static/css/blog.css">-->  
+    </head>
+    <body>
+          <div class="page-header">
+             <h1><a href='/blog'>class</a></h1>
+          </div>
+    {% block content%}{% endblock %}
+    </body>
+</html>
