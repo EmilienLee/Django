@@ -92,6 +92,7 @@
 <!-- First Container -->
 <div class="container-fluid bg-1 text-center">
   <h3 class="margin">Skin Analysis</h3>
+    <img src="/home/emilien/myproject/blog/templates/blog/test.jpg" style="width:50%">
   <div class="demo-frame">
    <div class="demo-container">
      <video id="video" width="320" height="240" preload autoplay loop muted></video>
@@ -101,55 +102,94 @@
 </div>
 
 <!-- Pricing Row -->
-<div class="container-fluid bg-2 text-center">
+<div class="container-fluid bg-3 text-center">
     <h2>熱門討論</h2>
-{% block content%}{% endblock %}
+
     <p>根據您的膚質狀況找出最新的討論主題</p><br>
     <div class="w3-third w3-margin-bottom">
       <ul class="w3-ul w3-border w3-hover-shadow">
         <li class="w3-theme">
+            
           <p class="w3-xlarge">{{1}}</p>
         </li>
         <li class="w3-normal">{{c}}</li>
         
-        </li>
-        <li class="w3-theme-l5 w3-padding-24">
-          <a href={{a}} class="w3-button w3-teal w3-padding-large">前往文章<a>
-        </li>
-      </ul>
-    </div>
-
-<div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-hover-shadow">
-        <li class="w3-theme">
-          <p class="w3-xlarge">{{b}}</p>
-        </li>
-        <li class="w3-padding-16">{{c}}</li>
         
-        </li>
         <li class="w3-theme-l5 w3-padding-24">
           <a href={{a}} class="w3-button w3-teal w3-padding-large">前往文章<a>
         </li>
       </ul>
     </div>
 
-<div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-hover-shadow">
-        <li class="w3-theme">
-          <p class="w3-xlarge">{{b}}</p>
-        </li>
-        <li class="w3-padding-16">{{c}}</li>
+<!-- PTT Popular Posts -->
+{% if x != None %}
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-container w3-padding">   
+      <h2>PTT Popular Posts</h2>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
         
-        </li>
-        <li class="w3-theme-l5 w3-padding-24">
-          <a href={{a}} class="w3-button w3-teal w3-padding-large">前往文章<a>
-        </li>
-      </ul>
-    </div>
+        <span class="w3-left w3-margin-right">{{mgauthor0}}</span><br>
+        <a href={{mgurl0}}>{{mgtitle0}}</a>
+      </li>
+      <li class="w3-padding-16">
+        
+        <span class="w3-left w3-margin-right">{{mgauthor1}}</span><br>
+         <a href={{mgurl1}}>{{mgtitle1}}</a>
+      </li> 
+      <li class="w3-padding-16">
+        
+        <span class="w3-left w3-margin-right">{{mgauthor2}}</span><br>
+         <a href={{mgurl2}}>{{mgtitle2}}</a>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        
+        <span class="w3-left w3-margin-right">{{mgauthor3}}</span><br>
+         <a href={{mgurl3}}>{{mgtitle3}}</a>
+      </li>  
+    </ul>
+  </div>   
+{% else %}
+    No athletes
+{% endif %}
 
+<!-- Babyhome Popular Posts -->
+{% if x != None %}
+  <div class="w3-third w3-margin-bottom">
+    <div class="w3-container w3-padding">   
+      <h2>Babyhome Popular Posts</h2>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        
+        <span class="w3-left w3-margin-right">{{author0}}</span><br>
+        <a href={{url0}}>{{title0}}</a>
+      </li>
+      <li class="w3-padding-16">
+        
+        <span class="w3-left w3-margin-right">{{author1}}</span><br>
+         <a href={{url1}}>{{title1}}</a>
+      </li> 
+      <li class="w3-padding-16">
+        
+        <span class="w3-left w3-margin-right">{{author2}}</span><br>
+         <a href={{url2}}>{{title2}}</a>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        
+        <span class="w3-left w3-margin-right">{{author3}}</span><br>
+         <a href={{url3}}>{{title3}}</a>
+      </li>  
+    </ul>
+  </div>   
+{% else %}
+    No athletes
+{% endif %}
 
 </div>
-
+<!-- Posts -->
+  <
 
 <!-- Second Container -->
 <div class="container-fluid bg-4 text-center">

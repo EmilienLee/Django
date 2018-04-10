@@ -15,8 +15,5 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-import rethinkdb as r
 
-conn = r.connect()
-conn.use('babyhome')
 
